@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Lines</title>
+        <style>
+
+          .body {
+            overflow: hidden;
+            color: grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 8px;
+            letter-spacing: 10px;
+            color: grey;
+          }
+
+          .line {
+            position: absolute;
+            width: 100vw; /* <- Zoom ou? Taille du trait */
+            background-color: black;
+          }
+
+        </style>
+    </head>
+    <body class="body">
+      <script type="text/javascript">
+
+      var generator = window.setInterval(function() {
+        var line = document.createElement('div')
+        line.setAttribute('class', 'line')
+        line.style.top = randX()+'vh'
+        line.style.left = randY()+'vw'
+        line.style.height = randHeight()+'px'
+        line.style.transform = 'rotate('+randDegres()+'deg) translate(-50%, -50%)'
+        document.body.appendChild(line)
+      }, 0,1) // <-- Nouveau trait toutes les n millisecondes.
+
+      function randX() {
+        return Math.floor(Math.random() * 100) + -50  // <- return Math.floor(Math.random() * Intervalle) + Début
+      }
+      function randY() {
+        return Math.floor(Math.random() * 100) + -50
+      }
+      function randHeight() {
+        return Math.floor(Math.random() * 5) + 1
+      }
+      function randDegres() {
+        return Math.floor(Math.random() * 359) + 1
+      }
+
+      // CHAT
+// Antoine :
+// Théodore :
+
+      </script>
+
+    </body>
+</html>
